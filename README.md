@@ -3,7 +3,11 @@
 This repository contains some useful linux command
 
 ## __SSH__
-### ssh config
+#### Generate key pair
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+#### ssh config
 -> Simplify remote access command
 create a ***config*** file in your ~/.ssh folder.
 Each host you want to reach are configured in this ***config*** file. Here is an example of template for one host:
@@ -15,7 +19,12 @@ User <theUser>
 ```
 
 ## __Git__
+#### Cheatsheet
 [Here](http://ndpsoftware.com/git-cheatsheet.html#loc=stash;) is a link heading to a nice interactive cheatsheet.
+#### Pretty tree
+```bash
+git log --graph --oneline --all --decorate=short
+```
 
 ## __Docker__
 Coming ...
