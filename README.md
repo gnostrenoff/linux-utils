@@ -42,3 +42,11 @@ cat /proc/cpuinfo | grep processor | wc -l
 ```bash
 update-rc.d <service-name> disable
 ```
+#### __Get public ip__
+```bash
+curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+```
+shorter
+```bash
+wget http://ipinfo.io/ip -qO -
+```
