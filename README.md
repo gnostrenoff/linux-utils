@@ -1,6 +1,6 @@
-# linux-utils
+# __linux-utils__
 
-This repository contains some useful linux command
+This repository contains some useful linux commands.
 
 ## __SSH__
 #### Generate key pair
@@ -27,9 +27,27 @@ git log --graph --oneline --all --decorate=short
 ```
 
 ## __Docker__
-Coming ...
+#### Cheatsheet
+[here](https://github.com/wsargent/docker-cheat-sheet) is a link heading to a nice cheatsheet.
+#### Utils
+
 
 ## __Utils__
+#### __Change user name__
+Add a temporary user
+```bash
+sudo adduser temporary
+```
+Add this user to sudoers
+```bash
+sudo adduser temporary sudo
+```
+Then log out, and log in using created user.
+```bash
+sudo usermod -l newUsername oldUsername
+usermod -d /home/newHomeDir -m newUsername
+```
+( You may need to killall oldUsername before executing the 2 commands above to make sure no process is running for this user)
 #### __Kill process by name__
 ```bash
 pkill -f <processName>
@@ -43,10 +61,6 @@ cat /proc/cpuinfo | grep processor | wc -l
 update-rc.d <service-name> disable
 ```
 #### __Get public ip__
-```bash
-curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
-```
-shorter
 ```bash
 wget http://ipinfo.io/ip -qO -
 ```
